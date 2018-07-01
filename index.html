@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Time picker</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="./build/style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="container">
+    <div id="table-container"></div>
+    <div class="menu-container">
+        <div class="quick-menu box-shadow-style">
+            <a class="quick-menu-unit ">
+                <span class="quick-menu-text-style">Быстрый выбор</span>
+            </a>
+            <div class="separate-line"></div>
+            <a id="working-hours" class="quick-menu-unit quick-menu-unit-hover" onclick="selectWorkingTime()">
+                <span class="quick-menu-text-style">Рабочие часы</span>
+            </a>
+            <a id="lunch" class="quick-menu-unit quick-menu-unit-hover" onclick="selectLunchTime()">
+                <span class="quick-menu-text-style">Обед</span>
+            </a>
+            <a id="evening" class="quick-menu-unit quick-menu-unit-hover" onclick="selectEveningTime()">
+                <span class="quick-menu-text-style">Вечернее время</span>
+            </a>
+            <a id="weekend" class="quick-menu-unit quick-menu-unit-hover" onclick="selectWeekend()">
+                <span class="quick-menu-text-style">Выходные</span>
+            </a>
+            <a class="quick-menu-unit quick-menu-unit-hover" onclick="clearAll()">
+                <span class="grey-text-style quick-menu-text-style">Сбросить всё</span>
+            </a>
+        </div>
+        <div class="result-container  box-shadow-style">
+            <a class="quick-menu-unit">
+                <span class="quick-menu-text-style">Покрытие недели</span>
+            </a>
+            <div class="separate-line"></div>
+            <a class="quick-menu-unit">
+                <span id="percent-result" class="quick-menu-text-style">0%</span>
+                <span id="hour-result" class="quick-menu-text-style">(0 часов)</span>
+            </a>
+        </div>
+    </div>
+</div>
+<script src="build/main.bundle.js"></script>
+</body>
+</html>
