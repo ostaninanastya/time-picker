@@ -16,7 +16,7 @@ body {
 }
 
 #container {
-    width: 1300px;
+    width: 1350px;
     height: 500px;
     margin: 0 auto;
 }
@@ -111,7 +111,7 @@ body {
 #table-container {
     vertical-align: top;
     display: inline-block;
-    margin-top: 50px;
+    margin-top: 33px;
     margin-right: 11px;
 }
 
@@ -146,4 +146,18 @@ body {
 
 .selected {
     background: #d1d9e0;;
+}
+
+.labels-block {
+    width: 50px;
+    display: inline-block;
+    text-align: right;
+}
+
+.labels-style {
+    color: #b0b3b6;
+    width: 50px;
+    position: relative;
+    top: -4px;
+    right: 4px;
 }
