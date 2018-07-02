@@ -8,6 +8,9 @@ const LUNCH_CLASS_NAME = 'lunch';
 const WORKING_HOURS_CLASS_NAME = 'working-hours';
 const SELECTED_ITEM_CLASS_NAME = 'selected';
 
+/* меню быстрого выбора элементов */
+
+/* сбросить все выделенные элементы */
 window.clearAll = function () {
     items.forEach(item => {
         if (selectedItems.includes(item)) {
@@ -22,6 +25,7 @@ window.clearAll = function () {
     updateTimeCoverResult();
 };
 
+/* выделить вечернее время с 18 до 22 часов включительно */
 window.selectEveningTime = function () {
     items.filter(item => item.time >= 18 && item.time <= 22).forEach(item => {
         if (!selectedItems.includes(item)) {
@@ -34,6 +38,7 @@ window.selectEveningTime = function () {
     updateTimeCoverResult();
 };
 
+/* выделить обеденное время */
 window.selectLunchTime = function () {
     items.filter(item => item.time === 13 || item.time === 14).forEach(item => {
         if (!selectedItems.includes(item)) {
@@ -46,6 +51,7 @@ window.selectLunchTime = function () {
     updateTimeCoverResult();
 };
 
+/* выделить выходные дни */
 window.selectWeekend = function () {
     items.filter(item => item.day === 6 || item.day === 7).forEach(item => {
         if (!selectedItems.includes(item)) {
@@ -58,6 +64,7 @@ window.selectWeekend = function () {
     updateTimeCoverResult();
 };
 
+/* выделить рабочее время, не включая обеденное */
 window.selectWorkingTime = function () {
     items.filter(item => item.time !== 14 && item.time !== 13
         && item.time >= 9 && item.time <= 19).forEach(item => {
@@ -71,6 +78,7 @@ window.selectWorkingTime = function () {
     updateTimeCoverResult();
 };
 
+/* добавить рамку для выбранного пункта меню */
 function addBorder(id) {
     [...document.getElementsByClassName(LEFT_BORDER_CLASS_NAME)]
         .forEach(item => item.classList.remove(LEFT_BORDER_CLASS_NAME));

@@ -1,4 +1,4 @@
-/*common style*/
+/* общие */
 
 body {
     background: #edeef0;
@@ -21,17 +21,7 @@ body {
     margin: 0 auto;
 }
 
-.item {
-    border: #edeef0 1px solid;
-    background: white;
-    border-radius: 2px;
-}
-
-.item:hover {
-    background: #f0f2f5;
-}
-
-/*menu style*/
+/* меню */
 
 .menu-container {
     margin-top: 50px;
@@ -88,7 +78,7 @@ body {
     background: #f0f2f5;
 }
 
-/*resultBox style*/
+/* результат покрытия недели */
 
 .result-container {
     display: inline-block;
@@ -106,7 +96,7 @@ body {
     padding-left: 8px;
 }
 
-/*graph style*/
+/* таблица */
 
 #table-container {
     vertical-align: top;
@@ -166,4 +156,14 @@ body {
     position: relative;
     top: -4px;
     right: 4px;
+}
+
+.item {
+    border: #edeef0 1px solid;
+    background: white;
+    border-radius: 2px;
+}
+
+.item:hover {
+    background: #f0f2f5;
 }

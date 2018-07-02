@@ -19,9 +19,10 @@ class timePickerItem {
     }
 }
 
+/* инициализировать данные, полученные с сервера */
 export function getInitialData() {
     return new Promise((resolve) => {
-        /* received initial data format : '[ { "id" : 4}, {"id" : 77}, {"id": 82} ]'; */
+        /* формат данных : '[ { "id" : 4}, {"id" : 77}, {"id": 82} ]'; */
 
         let jsonString, initialData;
 
@@ -31,6 +32,7 @@ export function getInitialData() {
     });
 }
 
+/* построить таблицу с учетом инициализированных данных */
 export function createTable(initialData) {
     let table, tr, td, id = 0;
 
@@ -75,6 +77,7 @@ export function createTable(initialData) {
     document.getElementById(TABLE_CONTAINER_ID).appendChild(table);
 }
 
+/* выделить элемент таблицы */
 function onTimePickerItemClick() {
     let clickedItem = items.find(item => (item.id === Number(this.id)));
 
@@ -90,6 +93,7 @@ function onTimePickerItemClick() {
     updateTimeCoverResult();
 }
 
+/* выделить элементы, соответствующие выбранному дню недели или времени */
 function onFrameClick() {
     items.filter(item => (this.timeFlag === true ? item.time : item.day) === Number(this.index))
         .forEach(item => {

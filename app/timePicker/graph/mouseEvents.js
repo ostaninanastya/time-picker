@@ -8,6 +8,8 @@ const TABLE_CONTAINER_ID = 'table-container';
 
 let mouseDown, deleteMode, startItem;
 
+/* установить элемент, на котором началось выделение области
+*  в зависимости от него установить режим вставки или удаления */
 document.getElementById(TABLE_CONTAINER_ID).onmousedown = function (e) {
     let targetItem = e.target;
 
@@ -17,6 +19,7 @@ document.getElementById(TABLE_CONTAINER_ID).onmousedown = function (e) {
     startItem = items.find(item => (item.id === Number(targetItem.id)));
 };
 
+/* в зависимости от режима произвести вставку или удаление */
 document.getElementById(TABLE_CONTAINER_ID).onmouseout = function (e) {
     if (!mouseDown || !e.relatedTarget.classList.contains(ITEM_CLASS_NAME)) {
         mouseDown = false;

@@ -4,6 +4,7 @@ const hourStringCases = ['часов', 'час', 'часа'];
 const PERCENT_RESULT_ID = 'percent-result';
 const HOUR_RESULT_ID = 'hour-result';
 
+/* первоначальная установка значения покрытия недели */
 export function setTimeCoverResult() {
     let result, hourString, lastSymbol;
 
@@ -25,13 +26,15 @@ export function setTimeCoverResult() {
     document.getElementById(HOUR_RESULT_ID).innerText = '(' + result + ' ' + hourString + ')';
 }
 
+/* обновить результат покрытия недели и отправить обновленные данные на сервер */
 export function updateTimeCoverResult() {
     setTimeCoverResult();
     sendData();
 }
 
+/* сериализация данных */
 function sendData() {
-    /* sending data format : [{"id" : 4, "day" : 1, "time" : 3},{"id" : 77, "day" : 4, "time" : 4}] */
+    /* формат данных : [{"id" : 4, "day" : 1, "time" : 3},{"id" : 77, "day" : 4, "time" : 4}] */
 
     let sendDataString = JSON.stringify(selectedItems);
 }
