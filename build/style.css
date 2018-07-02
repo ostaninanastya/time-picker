@@ -1,3 +1,5 @@
+/*common style*/
+
 body {
     background: #edeef0;
     text-align: center;
@@ -18,6 +20,7 @@ body {
     height: 500px;
     margin: 0 auto;
 }
+
 .item {
     border: #edeef0 1px solid;
     background: white;
@@ -27,45 +30,9 @@ body {
 .item:hover {
     background: #f0f2f5;
 }
-#table-container {
-    vertical-align: top;
-    display: inline-block;
-    margin-top: 50px;
-    margin-right: 11px;
-}
 
-.table-style {
-    width: 1000px;
-    height: 320px;
-    border-collapse: collapse;
-    cursor: pointer;
-    table-layout: fixed;
-    border-radius: 3px;
-    box-shadow: 0 0 1px 1px #e3e4e8;
-    overflow: hidden;
-}
+/*quick menu style*/
 
-.td-style {
-    box-sizing: border-box;
-    width: 4%;
-    height: 40px;
-    text-align: center;
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-.frame {
-    border: #446d9b 0.5px solid !important;
-    background: #4a76a8;
-    font-weight: 700;
-    font-family: Roboto, Helvetica Neue, sans-serif;
-    font-size: 15px;
-    color: white;
-}
-
-.selected {
-    background: #d1d9e0;;
-}
 .menu-container {
     margin-top: 50px;
     width: 232px;
@@ -115,10 +82,14 @@ body {
 .grey-text-style {
     color: #696a6e;
 }
+
 .left-border {
     border-left: 2px solid #5181b8;
     background: #f0f2f5;
 }
+
+/*resultBox style*/
+
 .result-container {
     display: inline-block;
     width: 230px;
@@ -133,4 +104,46 @@ body {
     display: inline-block;
     width: 38px;
     padding-left: 8px;
+}
+
+/*graph style*/
+
+#table-container {
+    vertical-align: top;
+    display: inline-block;
+    margin-top: 50px;
+    margin-right: 11px;
+}
+
+.table-style {
+    width: 1000px;
+    height: 320px;
+    border-collapse: collapse;
+    cursor: pointer;
+    table-layout: fixed;
+    border-radius: 3px;
+    box-shadow: 0 0 1px 1px #e3e4e8;
+    overflow: hidden;
+}
+
+.td-style {
+    box-sizing: border-box;
+    width: 4%;
+    height: 40px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.frame {
+    border: #446d9b 0.5px solid !important;
+    background: #4a76a8;
+    font-weight: 700;
+    font-family: Roboto, Helvetica Neue, sans-serif;
+    font-size: 15px;
+    color: white;
+}
+
+.selected {
+    background: #d1d9e0;;
 }

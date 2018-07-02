@@ -1,9 +1,0 @@
-.item {
-    border: #edeef0 1px solid;
-    background: white;
-    border-radius: 2px;
-}
-
-.item:hover {
-    background: #f0f2f5;
-}
