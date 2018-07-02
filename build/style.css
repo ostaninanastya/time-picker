@@ -31,7 +31,7 @@ body {
     background: #f0f2f5;
 }
 
-/*quick menu style*/
+/*menu style*/
 
 .menu-container {
     margin-top: 50px;
@@ -39,7 +39,7 @@ body {
     display: inline-block;
 }
 
-.quick-menu {
+.menu {
     padding-top: 10px;
     background: white;
     width: 230px;
@@ -48,7 +48,7 @@ body {
     display: inline-block;
 }
 
-.quick-menu-unit {
+.menu-unit {
     height: 9px;
     width: 200px;
     display: inline-block;
@@ -57,7 +57,7 @@ body {
     line-height: 11px;
 }
 
-.quick-menu-text-style {
+.menu-text-style {
     text-overflow: ellipsis;
     font-weight: 400;
     font-family: Roboto, Helvetica Neue, sans-serif;
@@ -74,7 +74,7 @@ body {
     display: inline-block;
 }
 
-.quick-menu-unit-hover:hover {
+.menu-unit-hover:hover {
     background: #f0f2f5;
     cursor: pointer;
 }

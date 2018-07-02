@@ -5,7 +5,7 @@ export const selectedItems = [];
 export const ITEM_CLASS_NAME = 'item';
 export const SELECTED_ITEM_CLASS_NAME = 'selected';
 
-/*quick menu style*/
+/*menu style*/
 export const LEFT_BORDER_CLASS_NAME = 'left-border';
 export const WEEKEND_CLASS_NAME = 'weekend';
 export const EVENING_CLASS_NAME = 'evening';
