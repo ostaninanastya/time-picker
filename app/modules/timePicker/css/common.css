@@ -1,0 +1,18 @@
+body {
+    background: #edeef0;
+    text-align: center;
+    user-select: none;
+    width: 100%;
+}
+
+.box-shadow-style {
+    border-radius: 3px;
+    box-shadow: 0 0 1px 1px #e3e4e8;
+    overflow: hidden;
+}
+
+#container {
+    width: 1300px;
+    height: 500px;
+    margin: 0 auto;
+}

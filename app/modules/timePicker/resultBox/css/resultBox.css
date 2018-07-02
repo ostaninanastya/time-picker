@@ -1,0 +1,15 @@
+.result-container {
+    display: inline-block;
+    width: 230px;
+    height: 85px;
+    margin-top: 11px;
+    padding-top: 10px;
+    background: white;
+    text-align: left;
+}
+
+#percent-result {
+    display: inline-block;
+    width: 38px;
+    padding-left: 8px;
+}
