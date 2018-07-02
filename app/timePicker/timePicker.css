@@ -146,7 +146,13 @@ body {
     background: #d1d9e0;;
 }
 
-.labels-block {
+.labels-block-hours {
+    width: 1000px;
+    display: inline-block;
+    text-align: right;
+}
+
+.labels-block-days {
     width: 50px;
     display: inline-block;
     text-align: right;
