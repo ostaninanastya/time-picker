@@ -1,8 +1,15 @@
-import * as style from "../const";
-import {items, selectedItems} from "../const";
 import {setTimeCoverResult, updateTimeCoverResult} from "../resultBox/resultBox";
 
 const days = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
+const ITEM_CLASS_NAME = 'item';
+const SELECTED_ITEM_CLASS_NAME = 'selected';
+const FRAME_ITEM_CLASS_NAME = 'frame';
+const TD_STYLE_CLASS_NAME = 'td-style';
+const TABLE_STYLE_CLASS_NAME = 'table-style';
+const TABLE_CONTAINER_ID = 'table-container';
+
+export const items = [];
+export const selectedItems = [];
 
 class timePickerItem {
     constructor(id, day, time) {
@@ -28,15 +35,15 @@ export function createTable(initialData) {
     let table, tr, td, id = 0;
 
     table = document.createElement('table');
-    table.classList.add(style.TABLE_STYLE_CLASS_NAME);
+    table.classList.add(TABLE_STYLE_CLASS_NAME);
     tr = table.insertRow();
     td = tr.insertCell();
-    td.classList.add(style.FRAME_ITEM_CLASS_NAME, style.TD_STYLE_CLASS_NAME);
+    td.classList.add(FRAME_ITEM_CLASS_NAME, TD_STYLE_CLASS_NAME);
 
     for (let j = 0; j < 24; j++) {
         let td = tr.insertCell();
 
-        td.classList.add(style.FRAME_ITEM_CLASS_NAME, style.TD_STYLE_CLASS_NAME);
+        td.classList.add(FRAME_ITEM_CLASS_NAME, TD_STYLE_CLASS_NAME);
         td.appendChild(document.createTextNode((j / 10 < 1) ? '0' + j : String(j)));
         td.onclick = onFrameClick.bind({index: j, timeFlag: true});
     }
@@ -45,14 +52,14 @@ export function createTable(initialData) {
         let tr = table.insertRow(),
             td = tr.insertCell();
 
-        td.classList.add(style.FRAME_ITEM_CLASS_NAME, style.TD_STYLE_CLASS_NAME);
+        td.classList.add(FRAME_ITEM_CLASS_NAME, TD_STYLE_CLASS_NAME);
         td.appendChild(document.createTextNode(days[i - 1]));
         td.onclick = onFrameClick.bind({index: i});
 
         for (let j = 0; j < 24; j++) {
             let td = tr.insertCell();
 
-            td.classList.add(style.ITEM_CLASS_NAME, style.TD_STYLE_CLASS_NAME);
+            td.classList.add(ITEM_CLASS_NAME, TD_STYLE_CLASS_NAME);
             td.id = ++id;
             items.push(new timePickerItem(id, i, j));
 
@@ -65,19 +72,19 @@ export function createTable(initialData) {
         }
     }
 
-    document.getElementById(style.TABLE_CONTAINER_ID).appendChild(table);
+    document.getElementById(TABLE_CONTAINER_ID).appendChild(table);
 }
 
 function onTimePickerItemClick() {
     let clickedItem = items.find(item => (item.id === Number(this.id)));
 
-    if (this.classList.contains(style.SELECTED_ITEM_CLASS_NAME)) {
+    if (this.classList.contains(SELECTED_ITEM_CLASS_NAME)) {
         selectedItems.splice(selectedItems.indexOf(clickedItem), 1);
-        this.classList.remove(style.SELECTED_ITEM_CLASS_NAME);
+        this.classList.remove(SELECTED_ITEM_CLASS_NAME);
     }
     else {
         selectedItems.push(clickedItem);
-        this.classList.add(style.SELECTED_ITEM_CLASS_NAME);
+        this.classList.add(SELECTED_ITEM_CLASS_NAME);
     }
 
     updateTimeCoverResult();
@@ -88,7 +95,7 @@ function onFrameClick() {
         .forEach(item => {
             if (!selectedItems.includes(item)) {
                 selectedItems.push(item);
-                document.getElementById(item.id).classList.add(style.SELECTED_ITEM_CLASS_NAME);
+                document.getElementById(item.id).classList.add(SELECTED_ITEM_CLASS_NAME);
             }
         });
 

@@ -1,20 +1,24 @@
-import * as style from "../const";
-import {selectedItems, items} from "../const";
+import {selectedItems} from "./init";
 import {updateTimeCoverResult} from "../resultBox/resultBox";
+import {items} from "./init";
+
+const ITEM_CLASS_NAME = 'item';
+const SELECTED_ITEM_CLASS_NAME = 'selected';
+const TABLE_CONTAINER_ID = 'table-container';
 
 let mouseDown, deleteMode, startItem;
 
-document.getElementById(style.TABLE_CONTAINER_ID).onmousedown = function (e) {
+document.getElementById(TABLE_CONTAINER_ID).onmousedown = function (e) {
     let targetItem = e.target;
 
-    if (!targetItem.classList.contains(style.ITEM_CLASS_NAME)) return;
+    if (!targetItem.classList.contains(ITEM_CLASS_NAME)) return;
     mouseDown = true;
-    deleteMode = targetItem.classList.contains(style.SELECTED_ITEM_CLASS_NAME);
+    deleteMode = targetItem.classList.contains(SELECTED_ITEM_CLASS_NAME);
     startItem = items.find(item => (item.id === Number(targetItem.id)));
 };
 
-document.getElementById(style.TABLE_CONTAINER_ID).onmouseout = function (e) {
-    if (!mouseDown || !e.relatedTarget.classList.contains(style.ITEM_CLASS_NAME)) {
+document.getElementById(TABLE_CONTAINER_ID).onmouseout = function (e) {
+    if (!mouseDown || !e.relatedTarget.classList.contains(ITEM_CLASS_NAME)) {
         mouseDown = false;
         return;
     }
@@ -25,7 +29,7 @@ document.getElementById(style.TABLE_CONTAINER_ID).onmouseout = function (e) {
 
     if (!selectedItems.includes(startItem)) {
         selectedItems.push(startItem);
-        document.getElementById(startItem.id).classList.add(style.SELECTED_ITEM_CLASS_NAME);
+        document.getElementById(startItem.id).classList.add(SELECTED_ITEM_CLASS_NAME);
     }
 
     let maxTime, minTime, maxDay, minDay;
@@ -41,7 +45,7 @@ document.getElementById(style.TABLE_CONTAINER_ID).onmouseout = function (e) {
         currentArea.forEach(item => {
             if (selectedItems.includes(item)) {
                 selectedItems.splice(selectedItems.indexOf(item), 1);
-                document.getElementById(item.id).classList.remove(style.SELECTED_ITEM_CLASS_NAME);
+                document.getElementById(item.id).classList.remove(SELECTED_ITEM_CLASS_NAME);
             }
         });
         updateTimeCoverResult();
@@ -63,7 +67,7 @@ document.getElementById(style.TABLE_CONTAINER_ID).onmouseout = function (e) {
         itemsToModify.forEach(item => {
             if (!selectedItems.includes(item)) {
                 selectedItems.push(item);
-                document.getElementById(item.id).classList.add(style.SELECTED_ITEM_CLASS_NAME);
+                document.getElementById(item.id).classList.add(SELECTED_ITEM_CLASS_NAME);
             }
         });
     }
@@ -73,13 +77,13 @@ document.getElementById(style.TABLE_CONTAINER_ID).onmouseout = function (e) {
         itemsToModify.forEach(item => {
             if (selectedItems.includes(item)) {
                 selectedItems.splice(selectedItems.indexOf(item), 1);
-                document.getElementById(item.id).classList.remove(style.SELECTED_ITEM_CLASS_NAME);
+                document.getElementById(item.id).classList.remove(SELECTED_ITEM_CLASS_NAME);
             }
         })
     }
     updateTimeCoverResult();
 };
 
-document.getElementById(style.TABLE_CONTAINER_ID).onmouseup = function () {
+document.getElementById(TABLE_CONTAINER_ID).onmouseup = function () {
     mouseDown = false;
 };

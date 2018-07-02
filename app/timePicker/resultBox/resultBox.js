@@ -1,6 +1,8 @@
-import {HOUR_RESULT_ID, PERCENT_RESULT_ID, selectedItems} from "../const";
+import {selectedItems} from "../graph/init";
 
 const hourStringCases = ['часов', 'час', 'часа'];
+const PERCENT_RESULT_ID = 'percent-result';
+const HOUR_RESULT_ID = 'hour-result';
 
 export function setTimeCoverResult() {
     let result, hourString, lastSymbol;
