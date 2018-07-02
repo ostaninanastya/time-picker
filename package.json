@@ -6,8 +6,7 @@
   "browserslist": [
     "last 2 Chrome versions",
     "last 2 ie versions",
-    "last 2 ff versions",
-    "last 2 safari"
+    "last 2 ff versions"
   ],
   "postcss": {
     "plugins": {
