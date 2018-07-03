@@ -66,7 +66,7 @@ export function createTable(initialData) {
             items.push(new timePickerItem(id, i, j));
 
             if (initialData.map(item => item.id).includes(Number(id))) {
-                td.classList.add(style.SELECTED_ITEM_CLASS_NAME);
+                td.classList.add(SELECTED_ITEM_CLASS_NAME);
                 selectedItems.push(new timePickerItem(id, i, j));
                 setTimeCoverResult();
             }
