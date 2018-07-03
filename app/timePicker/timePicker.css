@@ -132,10 +132,6 @@ body {
     color: white;
 }
 
-.selected {
-    background: #d1d9e0;;
-}
-
 .labels-block-hours {
     width: 1000px;
     display: inline-block;
@@ -164,4 +160,8 @@ body {
 
 .item:hover {
     background: #f0f2f5;
+}
+
+.selected {
+    background: #d1d9e0;;
 }
